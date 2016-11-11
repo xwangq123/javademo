@@ -1,5 +1,5 @@
 ﻿
-blogApp.controller('SecurityController', [
+app.controller('SecurityController', [
 function () {
         
 }]);

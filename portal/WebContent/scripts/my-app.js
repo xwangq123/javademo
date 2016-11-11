@@ -1,11 +1,11 @@
-﻿var blogApp = angular.module('blogApp', [ 'ngRoute' ]);
+﻿var app = angular.module('app', [ 'ngRoute' ]);
 
-blogApp.run([ function() {
+app.run([ function() {
 	document.title = "Test";
 	// window.location = "views/login.html";
 } ]);
 
-blogApp.config([ '$routeProvider', function($routeProvider) {
+app.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/security/security', {
 		templateUrl : '/views/security/security.html',
 		controller : 'SecurityController'
