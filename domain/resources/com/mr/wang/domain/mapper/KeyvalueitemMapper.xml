@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mr.wang.domain.mapping.KeyvalueitemMapper" >
+  <resultMap id="BaseResultMap" type="com.mr.wang.domain.model.Keyvalueitem" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="CAPTION" property="caption" jdbcType="VARCHAR" />
+    <result column="KEYId" property="keyid" jdbcType="INTEGER" />
+    <result column="VALUE" property="value" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, NAME, CAPTION, KEYId, VALUE, STATUS
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from keyvalueitem
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  
+   <select id="getAll" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from keyvalueitem
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from keyvalueitem
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mr.wang.domain.model.Keyvalueitem" >
+    insert into keyvalueitem (ID, NAME, CAPTION, 
+      KEYId, VALUE, STATUS
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{caption,jdbcType=VARCHAR}, 
+      #{keyid,jdbcType=INTEGER}, #{value,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mr.wang.domain.model.Keyvalueitem" >
+    insert into keyvalueitem
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="caption != null" >
+        CAPTION,
+      </if>
+      <if test="keyid != null" >
+        KEYId,
+      </if>
+      <if test="value != null" >
+        VALUE,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="caption != null" >
+        #{caption,jdbcType=VARCHAR},
+      </if>
+      <if test="keyid != null" >
+        #{keyid,jdbcType=INTEGER},
+      </if>
+      <if test="value != null" >
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mr.wang.domain.model.Keyvalueitem" >
+    update keyvalueitem
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="caption != null" >
+        CAPTION = #{caption,jdbcType=VARCHAR},
+      </if>
+      <if test="keyid != null" >
+        KEYId = #{keyid,jdbcType=INTEGER},
+      </if>
+      <if test="value != null" >
+        VALUE = #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mr.wang.domain.model.Keyvalueitem" >
+    update keyvalueitem
+    set NAME = #{name,jdbcType=VARCHAR},
+      CAPTION = #{caption,jdbcType=VARCHAR},
+      KEYId = #{keyid,jdbcType=INTEGER},
+      VALUE = #{value,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

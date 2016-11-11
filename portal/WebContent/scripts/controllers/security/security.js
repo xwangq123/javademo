@@ -1,0 +1,5 @@
+﻿
+blogApp.controller('SecurityController', [
+function () {
+        
+}]);
