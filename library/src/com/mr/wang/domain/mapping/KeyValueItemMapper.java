@@ -1,9 +1,5 @@
 package com.mr.wang.domain.mapping;
 
-import java.util.List;
-
-import org.apache.ibatis.session.RowBounds;
-
 import com.mr.wang.domain.model.KeyValueItem;
 
 public interface KeyValueItemMapper {
@@ -18,7 +14,4 @@ public interface KeyValueItemMapper {
     int updateByPrimaryKeySelective(KeyValueItem record);
 
     int updateByPrimaryKey(KeyValueItem record);
-
-	List<KeyValueItem> getAll(RowBounds pagingBound);
-	List<KeyValueItem> getAll();
 }

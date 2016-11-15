@@ -2,19 +2,18 @@ package com.mr.wang.service.impl;
 
 import java.util.List;
 
-import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mr.wang.domain.mapping.KeyvalueitemMapper;
-import com.mr.wang.domain.model.Keyvalueitem;
+import com.mr.wang.domain.mapping.KeyValueItemMapper;
+import com.mr.wang.domain.model.KeyValueItem;
 import com.mr.wang.domain.utils.PagingBounds;
-import com.mr.wang.service.KeyvalueitemService;
+import com.mr.wang.service.KeyValueItemService;
 
 @Service
-public class KeyvalueitemServiceImpl implements KeyvalueitemService {
+public class KeyValueItemServiceImpl implements KeyValueItemService {
 	@Autowired
-	private KeyvalueitemMapper mapper;
+	private KeyValueItemMapper mapper;
 
 	@Override
 	public void deleteById(int id) {
@@ -22,22 +21,13 @@ public class KeyvalueitemServiceImpl implements KeyvalueitemService {
 	}
 
 	@Override
-	public void add(Keyvalueitem Keyvalueitem) {
-		mapper.insert(Keyvalueitem);
-	}
-
-	@Override
-	public List<Keyvalueitem> getAll() {
+	public List<KeyValueItem> getAll() {
 		return  mapper.getAll();
 	}
 
 	@Override
-	public List<Keyvalueitem> getAll(PagingBounds pagingBound) {
+	public List<KeyValueItem> getAll(PagingBounds pagingBound) {
 		return  mapper.getAll(pagingBound);
 	}
 
-	@Override
-	public List<Keyvalueitem> getAll(RowBounds pagingBound) {
-		return  mapper.getAll(pagingBound);
-	}
 }

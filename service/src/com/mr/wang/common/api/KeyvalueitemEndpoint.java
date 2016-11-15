@@ -6,19 +6,14 @@ import com.mr.wang.utils.Response;
 
 
 @RequestMapping("/keyvalueitem")
-public interface KeyvalueitemEndpoint {
+public interface KeyValueItemEndpoint {
 	
 	@RequestMapping("/delete")
 	Response deleteKeyValueItem();
 
-	@RequestMapping("/addTest")
-	Response addKeyValueItem();
-
 	@RequestMapping("/get")
 	Response getAllPage();
 	
-	@RequestMapping("/getb")
-	Response getAllPageB();
 	
 	@RequestMapping("/getAll")
 	Response getAll();

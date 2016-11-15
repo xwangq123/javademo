@@ -5,9 +5,9 @@ import org.apache.ibatis.session.RowBounds;
 public class PagingBounds extends RowBounds {
 	// 总记录数
 	private int total;
-	// 查询的起始位置
+	// 查询的起始位置(页码)
 	private int offset;
-	// 查询多少行记录
+	// 查询多少行记录(条数)
 	private int limit;
 
 	public PagingBounds() {
