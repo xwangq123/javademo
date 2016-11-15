@@ -1,5 +1,6 @@
+drop SCHEMA  IF EXISTS  my_schema;
 CREATE SCHEMA `my_schema` ;
-
+use  my_schema;
 DROP TABLE IF EXISTS PERSONNER;
 /*==============================================================*/
 /* TABLE: PERSONNER人员表                                       */
@@ -95,7 +96,7 @@ CREATE TABLE ROLENODE
 );
 DROP TABLE IF EXISTS NODE;
 /*==============================================================*/
-/* TABLE: NODE节点表												*/
+/* TABLE: NODE节点表											*/
 /*==============================================================*/
 CREATE TABLE NODE
 (
